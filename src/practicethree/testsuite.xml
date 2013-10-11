@@ -1,0 +1,17 @@
+<suite name="FireflyAutomation" >
+	 <test name="Practice1" preserve-order="true" >
+		<classes>	  		          	
+			<class name="practicethree.ViewInbox" />
+			
+				  		
+		</classes>
+	</test> 
+	 <test name="Practice2" preserve-order="true" >
+		<classes>	  		          	
+	
+			<class name="practicethree.ViewSendBox" />
+				  		
+		</classes>
+	</test> 
+
+</suite>   

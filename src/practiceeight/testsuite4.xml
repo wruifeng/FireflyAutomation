@@ -1,0 +1,17 @@
+<suite name="FireflyAutomation" >
+	 <parameter name="TestData" value="\tool\test.properties" />
+	 <parameter name="url" value="\tool\test.properties" />
+	 <parameter name="devkey" value="\tool\test.properties" />
+	 <parameter name="project" value="\tool\test.properties" />
+	 <parameter name="plan" value="\tool\test.properties" />
+	 <parameter name="build" value="\tool\test.properties" />
+	 <parameter name="platform" value="\tool\test.properties" />
+	 
+	 <test name="Practice8" preserve-order="true" >
+		<classes>			
+			<class name="practiceeight.TestCase1" />
+
+		    
+		</classes>
+	</test> 	
+</suite> 

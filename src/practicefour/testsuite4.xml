@@ -1,0 +1,13 @@
+<suite name="FireflyAutomation" >
+	 <parameter name="TestData" value="\tool\test.properties" />
+	 <test name="Practice1" preserve-order="true" >
+		<classes>			
+			<class name="practicefour.Practice1OnTestNG" >
+		        <methods>  
+		          <include name="test"/>		          
+		         </methods>   
+		   </class>
+		    
+		</classes>
+	</test> 	
+</suite> 
