@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 public class Login126Page {
 
 	private WebDriver driver;
-	private DBOp dbsession;
+	private DBOp dbsession = new DBOp("LoginPage");
 	
-	public Login126Page(WebDriver driver,DBOp dbsession){
+	public Login126Page(WebDriver driver){
 	    this.driver = driver;	
-	    this.dbsession = dbsession;
+	    dbsession.conn();
 	}
 	
 	
@@ -28,7 +28,7 @@ public class Login126Page {
 	public void signIn(){
 		driver.findElement(By.cssSelector(dbsession.getLocatorCSS("SignUp"))).click();
 	}
-	
+	//
 	
 	
 }
