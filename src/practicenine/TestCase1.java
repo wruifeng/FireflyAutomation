@@ -20,6 +20,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import practicefour.ParseProperties;
+import practicefour.Wait;
 import practiceeight.HomePage;
 import practiceeight.LoginPage;
 
@@ -29,6 +30,7 @@ public class TestCase1 {
 		private FirefoxProfile firefoxprofile;
 		private String projectpath = System.getProperty("user.dir");		
 		private ParseProperties data = new ParseProperties(System.getProperty("user.dir")+"\\tool\\test.properties"); 
+		private Wait wa;
 		
 		@BeforeClass
 		public void startFirefox(){
@@ -46,6 +48,7 @@ public class TestCase1 {
 				
 				ffwb = new FirefoxDriver(firefoxprofile);
 				ffwb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				wa = new Wait(ffwb);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -54,7 +57,7 @@ public class TestCase1 {
 		
 		
 		@Test
-		public void login126DotCom(){
+		public void loginBaidu(){
 			ffwb.get("http://www.baidu.com");
 			ffwb.findElement(By.xpath("//a[@name='tj_mp3']")).click();
 			ffwb.findElement(By.xpath("//a[contains(text(),'æ≠µ‰¿œ∏Ë')]")).click();
@@ -75,6 +78,17 @@ public class TestCase1 {
 			
 		}
 		
+		@Test
+		public void login126DotCom(){				
+			Login126Page loginpage = new Login126Page(ffwb);	
+			
+			ffwb.get("http://www.126.com");			
+			loginpage.setUserName("FireflyAutomation");
+			loginpage.setPassword("Firefly");
+			loginpage.signIn();
+			wa.waitFor(5000);
+			
+		}
 		
 
 		@AfterClass
