@@ -19,9 +19,11 @@ public class LaunchIE {
 		caps.setCapability(InternetExplorerDriver.FORCE_CREATE_PROCESS, false);
 		caps.setCapability(InternetExplorerDriver.IE_SWITCHES, "-private");		
         caps.setCapability("ignoreZoomSetting", true);
+        
+        
 	}
 	
-	
+
 	
 	@Test
 	public void searchOnBaidu(){
