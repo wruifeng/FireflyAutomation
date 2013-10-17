@@ -1,8 +1,8 @@
-<suite name="404Automation" parallel = "methods" thread-count = "2" >
+<suite name="FireflyAutomation" parallel = "methods" thread-count = "2" >
 	<parameter name="node1" value="http://localhost:5555/wd/hub"/>
 	<parameter name="node2" value="http://localhost:6666/wd/hub"/>
 	
-	<test name="404automation1 examples"  preserve-order="true" >
+	<test name="FireflyAutomation1 examples"  preserve-order="true" >
 	    <parameter name="browser" value="firefox"/>
 		<classes>
 		    <class name="testcases.MutipleTasks" >
