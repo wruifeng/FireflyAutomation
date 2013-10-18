@@ -1,28 +1,17 @@
 <suite name="FireflyAutomation" parallel = "tests" thread-count = "2" >
-	<parameter name="node1" value="http://localhost:5555/wd/hub"/>
+	<parameter name="node1" value="http://172.28.55.67:5555/wd/hub"/>
 	<parameter name="node2" value="http://localhost:6666/wd/hub"/>
 	
 	<test name="FireflyAutomation1 examples"  preserve-order="true" >
-	        <parameter name="browser" value="firefox"/>
+	      
 		<classes>
-		    <class name="testcases.MutipleTasks" >
+		    <class name="practiceten.testcases.TestCase1" >
 		        <methods>  
-		          <include name="searchForOnGoogle"/>	    
+		          <include name="selectItemFromDropDownList"/>	    
 		         </methods>   
 		   </class>
 		</classes>
 	</test> 
 	
-	<test name="FireflyAutomation2 examples"  preserve-order="true" >
-	        <parameter name="browser" value="chrome"/>
-		<classes>
-		    <class name="testcases.MutipleTasks" >
-		        <methods>  
-		          <include name="searchForOnGoogle"/>	    
-		         </methods>   
-		   </class>
-		</classes>
-	</test> 
-
 </suite>  
 
