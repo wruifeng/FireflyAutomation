@@ -17,6 +17,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.openqa.selenium.JavascriptExecutor;
 
 import practicefour.Wait;
 
@@ -119,7 +120,21 @@ public class TestCase implements Locators{
 	
 	
 	
-	
+	 @Test
+	    public void dragAndDrop(){
+	        ffwb.get("http://yixun.com");
+	        ((JavascriptExecutor) ffwb).executeScript("window.scrollBy(0,6000)", "");
+	        wait.waitFor(5000);     
+	    }
+	     
+	    @Test
+	    public void dragAndDrop2(){
+	        ffwb.get("http://reg.163.com/agreement.shtml");
+	        int numberOfPixelsToDragTheScrollbarDown = 5000;
+	        Actions dragger = new Actions(ffwb);
+	        dragger.moveToElement(ffwb.findElement(By.xpath("//p[contains(text(),'网易通行证服务条款')]"))).clickAndHold().moveByOffset(  0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+	        wait.waitFor(5000);
+	    }
 	
 	
 	
