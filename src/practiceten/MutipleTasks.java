@@ -37,17 +37,16 @@ public class MutipleTasks{
 	@BeforeSuite()
 	public void beforesuite(@Optional("http://localhost:5555/wd/hub")String node1,@Optional("http://localhost:6666/wd/hub")String node2){
 		
-		projectpath = System.getProperty("user.dir");
-		
+		projectpath = System.getProperty("user.dir");		
 		seleniumserverstandalone = projectpath+"\\tool\\selenium-server-standalone.jar";
-		node1json = projectpath+"\\src\\practiceten\\config\\node1.json";
-		node2json = projectpath+"\\src\\practiceten\\config\\node2.json";
+		//node1json = projectpath+"\\src\\practiceten\\config\\node1.json";
+		//node2json = projectpath+"\\src\\practiceten\\config\\node2.json";
 		hubjson   =  projectpath+"\\src\\practiceten\\config\\hub.json";
 		
-		startnode1 = projectpath+"\\tool\\startnode1.bat";
-		startnode2 = projectpath+"\\tool\\startnode2.bat";
+		//startnode1 = projectpath+"\\tool\\startnode1.bat";
+		//startnode2 = projectpath+"\\tool\\startnode2.bat";
 		starthub   = projectpath+"\\tool\\starthub.bat";
-		chromedriver = projectpath+"\\tool\\chromedriver32.exe";
+		//chromedriver = projectpath+"\\tool\\chromedriver32.exe";
 		
 		try {
 			Runtime.getRuntime().exec("cmd /c  start "+starthub+" "+seleniumserverstandalone+" "+hubjson);
@@ -61,9 +60,7 @@ public class MutipleTasks{
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
+		}	
 		
 		map.put("node1", node1);
 		map.put("node2", node2);
