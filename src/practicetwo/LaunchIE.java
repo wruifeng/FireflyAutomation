@@ -28,8 +28,8 @@ public class LaunchIE {
 	
 	@Test
 	public void searchOnBaidu(){	
-		iewb.get("https://login.providerlink.healthcare.stg.covisint.com/providerlink");
-		iewb.get("javascript:document.getElementById('overridelink').click();");
+		iewb.get("http://www.baidu.com");
+		//iewb.get("javascript:document.getElementById('overridelink').click();");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

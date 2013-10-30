@@ -40,7 +40,7 @@ public class LaunchFF {
 	@Test
 	public void searchOnBaidu(){
 		ffwb = new FirefoxDriver(firefoxprofile);
-		ffwb.get("https://login.providerlink.healthcare.stg.covisint.com/providerlink");
+		ffwb.get("http://www.baidu.com");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
