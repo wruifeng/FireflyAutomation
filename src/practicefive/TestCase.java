@@ -57,6 +57,17 @@ public class TestCase implements Locators{
 		ffwb.switchTo().frame(ffwb.findElement(By.xpath(SLIDERIFRAME)));
 		Point initialPoint= ffwb.findElement(By.xpath(SLIDER)).getLocation();
 		System.out.println(initialPoint);
+       
+        Actions dragger = new Actions(ffwb);
+        dragger.dragAndDropBy(ffwb.findElement(By.xpath(SILDER)), initialPoint.getX()+80, initialPoint.getY()).build().perform();
+        wait.waitFor(5000);
+
+		
+		
+		ffwb.switchTo().defaultContent();
+		ffwb.findElement(By.xpath(DRAGGABLE)).click();
+		wait.waitFor(3000);
+
 	}
 	
 	
