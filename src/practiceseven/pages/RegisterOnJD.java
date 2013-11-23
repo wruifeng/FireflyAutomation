@@ -29,6 +29,7 @@ public class RegisterOnJD {
 	private WebElement submit;
 	
 	//这里就不需要@FindBy或者@FindBys
+	protected String dynamicstr;
     protected WebElement regfinished;
 	
 	public RegisterOnJD(WebDriver driver){
@@ -49,19 +50,21 @@ public class RegisterOnJD {
 	}
 	
 	
-	public void submit(){
-		submit.click();
+	public void submit(){		
+		submit.click();		
 	}
 	
 	
 	//动态设置webpage上的元素xpath
-	public void setWebElement(String value){
-		String locator = "//div[text()=' 恭喜，%var[0]% 已注册成功！']";
-		locator = locator.replace("%var%", value);
-		regfinished = driver.findElement(By.xpath(locator));
+	public String setWebElement(String value){
+		dynamicstr = "//div[text()=' 恭喜，%var[0]% 已注册成功！']";
+		dynamicstr = dynamicstr.replace("%var%", value);		
+		return dynamicstr;
+		
 	}
 	
 	public WebElement getWebElement(){		
+		regfinished = driver.findElement(By.xpath(dynamicstr));
 		return regfinished;
 	}
 	
