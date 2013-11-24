@@ -24,4 +24,10 @@ public class PracticeBase {
     	System.out.println("afterSuite");
     }
     
+    
+    @Test
+    public void runAll(){
+    	System.out.println("Run all test cases");
+    }
+    
 }

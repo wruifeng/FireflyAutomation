@@ -134,7 +134,9 @@ public class TestCase implements Locators{
 	 @Test
 	    public void dragAndDrop(){
 	        ffwb.get("http://yixun.com");
-	        ((JavascriptExecutor) ffwb).executeScript("window.scrollBy(0,6000)", "");
+	        Point shanghai = ffwb.findElement(By.xpath("//a[text()='上海工商']")).getLocation();
+	        System.out.print(shanghai);
+	        ((JavascriptExecutor) ffwb).executeScript("window.scrollBy("+shanghai.getX()+","+shanghai.getY()+")");
 	        wait.waitFor(5000);     
 	    }
 	     

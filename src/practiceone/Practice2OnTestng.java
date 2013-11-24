@@ -15,12 +15,12 @@ public class Practice2OnTestng {
     
     @Test
     public void aFastTest(){
-    	System.out.println("aFastTest");
+    	System.out.println("practice2:aFastTest");
     }
     
     @Test
     public void bSlowTest(){
-    	System.out.println("bSlowTest");
+    	System.out.println("practice2:bSlowTest");
     }
     
 

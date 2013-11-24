@@ -12,6 +12,10 @@ public class HomePage {
 	@FindBy(xpath = "//a[contains(text(),'Ãâ·Ñ×¢²á')]")
 	private WebElement reg;
 	
+	@FindBy(xpath = "//a[text()='Ê×Ò³']")
+	private WebElement main;
+	
+	
 	
 	public HomePage(WebDriver driver){
 		this.driver = driver;
@@ -23,5 +27,8 @@ public class HomePage {
 	}
 	
 	
+	public void navigateToJD(String url){
+		driver.get(url);
+	}
 	
 }

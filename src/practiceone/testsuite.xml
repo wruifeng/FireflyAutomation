@@ -6,12 +6,13 @@
 		          <include name="bSlowTest"/>		          
 		         </methods>   
 		   </class>
+		     <class name="practiceone.PracticeBase"/>
 		    <class name="practiceone.Practice1OnTestng" >
 		        <methods>  
 		          <include name="aFastTest"/>		          
 		         </methods>   
 		   </class>
-            <class name="practiceone.PracticeBase"/>
+          
 		</classes>
 	</test> 
 	

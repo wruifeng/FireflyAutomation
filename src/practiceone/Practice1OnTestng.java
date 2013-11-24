@@ -16,7 +16,7 @@ public class Practice1OnTestng {
     
     @Test
     public void aFastTest(){
-    	System.out.println("aFastTest");
+    	System.out.println("practice1:aFastTest");
     }
     
     @Test

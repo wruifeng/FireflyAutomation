@@ -7,17 +7,13 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import practicefour.ParseProperties;
 import practiceseven.pages.HomePage;
-import practiceseven.pages.RegisterOnJD;
 
-
-public class TestCase1 {
+public class TestCase2 {
 	   protected  static WebDriver ffwb;
 		private FirefoxProfile firefoxprofile;
 		private String projectpath = System.getProperty("user.dir");
@@ -43,30 +39,10 @@ public class TestCase1 {
 			}		
 		}
 		
-		
+
 		@Test
-		public void regAccount(){
-			//Wait wait = new Wait(ffwb);
-			//ffwb.get("http://www.jd.com/");
-			RegisterOnJD reg = new RegisterOnJD(ffwb);
+		public void test2(){
 			HomePage homepage = new HomePage(ffwb);
-			
-			
-			
 			homepage.navigateToJD("http://www.jd.com/");
-			homepage.register();
-			reg.setAccountName(data.getValue("accountname"));
-			reg.setPassword(data.getValue("password"));
-			reg.submit();
-			Assert.assertEquals(reg.getWebElement().isDisplayed(),true);
 		}
-		
-		
-		
-		
-		@AfterClass
-		public void releaseBrowser(){
-			ffwb.quit();
-		}
-		
 }
