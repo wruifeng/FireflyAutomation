@@ -1,0 +1,21 @@
+<project name="FireflyAutomation" basedir=".">
+    <property name="LIB" value="${basedir}/libs" />
+    <path id="master-classpath">
+         <fileset dir="${LIB}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+     
+    <target name="testcase">
+        <property name="dir" value=""/>
+    	<delete dir="${test.dir}/single/output"/>
+        <mkdir dir="${basedir}/output"/>
+
+        <xslt in="${basedir}/test-output/testng-results.xml" style="${basedir}/tool/testng-results.xsl" out="${basedir}/output/index.html" classpathref="master-classpath" processor="SaxonLiaison">
+            <param name="testNgXslt.outputDir" expression="${basedir}/output/"/>
+            <param name="testNgXslt.sortTestCaseLinks" expression="true"/>
+            <param name="testNgXslt.testDetailsFilter" expression="FAIL,SKIP,PASS"/>
+        </xslt>
+    </target>
+	
+</project>
